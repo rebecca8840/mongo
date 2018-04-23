@@ -4,6 +4,8 @@ var mongoose = require("mongoose");
 var cheerio = require("cheerio");
 var exphbs = require("express-handlebars");
 var request = require("request");
+var axios = require("axios");
+var logger = require("morgan");
 
 var db = require("./models");
 
@@ -13,7 +15,23 @@ var app = express();
 
 app.use(bodyParser.urlencoded({extended: true}));
 
+// If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
+
+// Set mongoose to leverage built in JavaScript ES6 Promises
+// Connect to the Mongo DB
+mongoose.Promise = Promise;
+mongoose.connect(MONGODB_URI);
+
+app.use(logger("dev"));
+
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(express.static("public"));
+
 app.get("/scrape", function(req, res){
+	 axios.get("https://www.seeker.com/topics/space").then(function(response){
+
 	var $ = cheerio.load(response.data);
 
 $("frow-container h2").each(function(i, element){
@@ -36,7 +54,8 @@ db.Article.create(result)
 	return res.json(err);
 	});	
 
-	res.send("Scrape completed!")
+		res.send("Scrape completed!")
+	});
 });
 
 app.get("/articles", function(req, res){

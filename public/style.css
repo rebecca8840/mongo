@@ -1,0 +1,30 @@
+/*.background-color {
+	background-color: #00004f;
+}*/
+
+.jumbotron {
+	background-image: url("./images/darkness.png");
+	color: white;
+}
+
+.container {
+	text-align: center;
+}
+
+.header-title {
+	font-family: 'Noto Serif', serif;
+	font-size: 40px;
+}
+
+.header-subtext {
+	font-family: 'Roboto', sans-serif;
+	font-size: 28px;
+	margin-top: 15px;
+}
+
+#button {
+	margin: -20px -50px; 
+    position:relative;
+    left: 49%; 
+    margin-top: 12px;
+}

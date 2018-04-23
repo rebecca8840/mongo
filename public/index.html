@@ -2,15 +2,59 @@
 <html lang="en-us">
   <head>
     <meta charset="UTF-8">
-    <title>Scraping the Stars</title>
-<!--     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous"> -->
+    <title>Star Scraping</title>
+     <style>
+      body { background-color: #F2F6D0 }
+/*      #wrapper {
+        width: 960px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 5%;
+      }*/
+      #articles {
+        display: inline-block;
+        overflow: auto;
+        width: 60%;
+        height: 700px;
+      }
+      #notes {
+        float: right;
+        width: 30%;
+      }
+      textarea, input {
+        display: block;
+        width: 100%;
+        background-color: #FCF5C7;
+      }
+      input {
+        height: 36px;
+        font-size: 24px;
+      }
+      textarea {
+        height: 200px;
+        font-size: 18px;
+      }
+    </style>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif|Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   </head>
 
   <body>
+  <div class="background-color">
     <div id="wrapper">
-      <h1>Scraping the Stars</h1>
-      <h2>A homework assignment scraping articles from the space section of Seeker.com</h2>
+    <div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="header-title">Star Scraping</h1>
+     <h2 class="header-subtext">A homework assignment scraping articles from the space section of Seeker.com</h2>
+  </div>
+  <a class="waves-effect waves-light btn-large" id="button">Scrape</a>
+</div>
+</div>
       <div id="articles"></div>
       <div id="notes"></div>
     </div>

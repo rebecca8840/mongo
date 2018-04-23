@@ -4,10 +4,10 @@ $.getJSON("/articles", function(data){
 	}
 });
 
-$document.on("click", "p", function(){
+$(document).on("click", "p", function(){
 	$("#notes").empty();
 
-var thisId = $(this).attr("data-id");
+	var thisId = $(this).attr("data-id");
 
 $.ajax({
 	method:"GET",
@@ -28,7 +28,7 @@ $.ajax({
 	});
 });
 
-$document.on("click", "#savenote", function(){
+$(document).on("click", "#savenote", function(){
 	var thisId = $(this).attr("data-id");
 
 	$.ajax({
