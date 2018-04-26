@@ -23,6 +23,10 @@ var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines
 mongoose.Promise = Promise;
 mongoose.connect(MONGODB_URI);
 
+// .catch(function (reason) {
+//     console.log('Unable to connect to the mongodb instance. Error: ', reason);})
+
+
 app.use(logger("dev"));
 
 app.use(bodyParser.urlencoded({ extended: true }));
