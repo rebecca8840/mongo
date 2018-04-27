@@ -1,20 +1,31 @@
 {
-"name": "mongo",
- "version": "1.0.0",
- "description": "NPM Packages:\r . Mongoose\r . Express\r . Express-Handlebars\r . Body-Parser\r . Cheerio \r . Request",
+  "name": "mongo",
+  "version": "1.0.0",
+  "description": "NPM Packages:\r . Mongoose\r . Express\r . Express-Handlebars\r . Body-Parser\r . Cheerio \r . Request",
   "main": "server.js",
- "scripts": {
- "start": "node server.js"
+  "scripts": {
+    "start": "node server.js"
   },
- "repository": {
-"type": "git",
- "url": "git+https://github.com/rebecca8840/mongo.git"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rebecca8840/mongo.git"
   },
-"keywords": [],
-"author": "",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
- "bugs": {
-"url": "https://github.com/rebecca8840/mongo/issues"
+  "bugs": {
+    "url": "https://github.com/rebecca8840/mongo/issues"
   },
-"homepage": "https://github.com/rebecca8840/mongo#readme"
+  "homepage": "https://github.com/rebecca8840/mongo#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.2",
+    "cheerio": "^1.0.0-rc.2",
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "mongoose": "^5.0.16",
+    "morgan": "^1.9.0",
+    "request": "^2.85.0"
+  },
+  "devDependencies": {}
 }
