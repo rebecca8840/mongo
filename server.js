@@ -9,22 +9,17 @@ var logger = require("morgan");
 
 var db = require("./models");
 
-var PORT = 3000;
+var PORT = process.env.PORT || 3000;
 
 var app = express();
 
 app.use(bodyParser.urlencoded({extended: true}));
 
-// If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
 
-// Set mongoose to leverage built in JavaScript ES6 Promises
-// Connect to the Mongo DB
+
 mongoose.Promise = Promise;
 mongoose.connect(MONGODB_URI);
-
-// .catch(function (reason) {
-//     console.log('Unable to connect to the mongodb instance. Error: ', reason);})
 
 
 app.use(logger("dev"));
